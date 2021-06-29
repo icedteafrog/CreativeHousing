@@ -10,4 +10,4 @@ The code is not tested or anything, it's just mashed up into a repository.
 node part is decompiled as the code was lost.
 
 ## How to (probably) use
-i have no fucking idea. Run these plugins, create your database tables, run the node runnable on your machine, and watch your machine's ram get eaten i guess?
+I have no fucking idea. Run these plugins, create your database tables, run the node runnable on your machine, and watch your machine's ram get eaten I guess?
