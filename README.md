@@ -6,6 +6,7 @@ I will **maybe** try to optimize this code a little, but it's still not a good c
 If you want to change something, you can create a pull request.
 
 The code is not tested or anything, it's just mashed up into a repository.
+"node" part is decompiled as the code was lost due the guy deleting our VPS.
 
 ## How to (probably) use
 i have no fucking idea. Run these plugins, create your database tables, run the node runnable on your machine, and watch your machine's ram get eaten i guess?
