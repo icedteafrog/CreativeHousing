@@ -1,0 +1,7 @@
+name: GZHousingLobby
+main: cz.goldzone.housing.Plugin
+version: 1.0
+softdepend: [PlaceholderAPI]
+commands:
+  gzhousing:
+    description: idk

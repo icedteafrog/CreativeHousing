@@ -1,0 +1,9 @@
+name: SMGZHousing
+main: cz.goldzone.housing.Plugin
+version: 1.0
+commands:
+  menu:
+  vote:
+  checkpoint:
+    aliases: [ cp, c ]
+  fly:
