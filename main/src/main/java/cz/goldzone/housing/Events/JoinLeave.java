@@ -47,8 +47,6 @@ public class JoinLeave implements Listener {
 //            ex.printStackTrace();
 //        }
 //
-//        Plugin.getInstance().getScoreBoard().createBoard(p);
-//
 //        if (Plugin.getRedis("CREATIVE_HOUSING;" + p.getUniqueId() + ";spec") != null) {
 //            Player spectated = Bukkit.getPlayer(Plugin.getRedis("CREATIVE_HOUSING;" + p.getUniqueId() + ";spec"));
 //
@@ -60,6 +58,8 @@ public class JoinLeave implements Listener {
 //                return;
 //            }
 //        }
+
+        Plugin.getInstance().getScoreBoard().createBoard(p);
 
         if (!p.hasPermission("perm.at"))
             for (Player pp : SpectateManager.spectators)
