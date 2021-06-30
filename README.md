@@ -1,5 +1,7 @@
 # GZHousing (CreativeHousing)
 
+### If you are looking for the optimized version, or want to contribute to the project, use the "optimization" branch.
+
 This plugin is the definition of **dogshit**. I don't recommend using it on production, as it's poorly made by a bad Dev, and probably has a lot of bugs and security flaws.
 I will **maybe** try to optimize this code a little, but it's still not a good choice to use it on production.
 This code won't probably even work unless you focus on fixing it.
