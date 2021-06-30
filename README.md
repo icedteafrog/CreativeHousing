@@ -9,5 +9,7 @@ If you want to change something, you can create a pull request.
 The code is not tested or anything, it's just mashed up into a repository.
 node part is decompiled as the code was lost.
 
+This plugin belongs to the Gold-Zone.cz Network, and is shared with the approval of the Founder.
+
 ## How to (probably) use
 I have no fucking idea. Run these plugins, create your database tables, run the node runnable on your machine, and watch your machine's ram get eaten I guess?
