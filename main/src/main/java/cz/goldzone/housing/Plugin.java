@@ -10,10 +10,14 @@ import cz.goldzone.housing.Events.*;
 import cz.goldzone.housing.Managers.Mysql;
 import cz.goldzone.housing.Managers.ScoreboardManager;
 import cz.goldzone.housing.Utils.DateUtil;
+import cz.goldzone.housing.Utils.FileUtil;
+import cz.goldzone.housing.cons.MysqlData;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -21,9 +25,12 @@ import java.io.IOException;
 
 public class Plugin extends JavaPlugin {
 
-    public static String serverName;
-    public static String prefix = "§8[§6§lHousing§8]";
-    public static Mysql mysql;
+    @Getter
+    public String serverName;
+    @Getter
+    public String prefix = "§8[§6§lHousing§8]";
+    @Getter
+    public Mysql mysql;
     private static Plugin main;
     public FileConfiguration defConfig;
     public File defFile;
@@ -37,20 +44,26 @@ public class Plugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // instance
         main = this;
+        // Commands
         this.getCommand("menu").setExecutor(new Menu());
         this.getCommand("vote").setExecutor(new Vote());
         this.getCommand("checkpoint").setExecutor(new CheckPoint());
         this.getCommand("fly").setExecutor(new Fly());
-        this.getServer().getPluginManager().registerEvents(new GUIEvents(), this);
+        // Listeners
+        PluginManager pm = Bukkit.getPluginManager();
+        pm.registerEvents(new GUIEvents(), this);
         this.getServer().getPluginManager().registerEvents(new BlockPlace(), this);
         this.getServer().getPluginManager().registerEvents(new BlockBreak(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerInteract(), this);
         this.getServer().getPluginManager().registerEvents(new JoinLeave(), this);
         this.getServer().getPluginManager().registerEvents(new ChatEvent(), this);
         this.getServer().getPluginManager().registerEvents(new OtherEvents(), this);
+        // Plugin Channels
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
-        mysql = new Mysql();
+        // File loading
+        mysql = new Mysql(new MysqlData(FileUtil.loadFile(getDataFolder().getAbsolutePath(), "mysql.yml")));
         FileConfiguration customConfig = YamlConfiguration.loadConfiguration(new File("plugins/serverName.yml"));
         serverName = (String) customConfig.get("serverName");
         createConfig();

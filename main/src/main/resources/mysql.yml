@@ -1,0 +1,10 @@
+MYSQL:
+  ENABLED: false
+  # MySQL address
+  HOST: 'localhost'
+  PORT: 3306
+  # Your credentials
+  USER: 'root'
+  PASSWORD: ''
+  # Database name
+  DATABASE: ''
